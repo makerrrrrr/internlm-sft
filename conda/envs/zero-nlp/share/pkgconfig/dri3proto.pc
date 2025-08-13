@@ -1,7 +1,0 @@
-prefix=/root/autodl-tmp/conda/envs/zero-nlp
-includedir=${prefix}/include
- 
-Name: DRI3Proto
-Description: DRI3 extension headers
-Version: 1.4
-Cflags: -I${includedir}
