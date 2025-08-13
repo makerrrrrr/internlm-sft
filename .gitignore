@@ -71,4 +71,11 @@ Thumbs.db
 
 # Large model directories
 internlm-7b-model/
-__MACOSX/ 
+__MACOSX/
+
+# Conda environments
+conda/
+.conda/
+
+# App directories
+APP/ 
