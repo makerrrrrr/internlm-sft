@@ -1,0 +1,6 @@
+#!/root/autodl-tmp/conda/envs/zero-nlp/bin/python3.1
+
+from deepspeed.launcher.runner import main
+
+if __name__ == '__main__':
+    main()

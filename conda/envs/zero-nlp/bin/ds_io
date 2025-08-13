@@ -1,0 +1,6 @@
+#!/root/autodl-tmp/conda/envs/zero-nlp/bin/python3.1
+
+from deepspeed.nvme import ds_io_main
+
+if __name__ == '__main__':
+    ds_io_main()

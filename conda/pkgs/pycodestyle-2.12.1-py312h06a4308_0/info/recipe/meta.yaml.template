@@ -1,0 +1,60 @@
+{% set name = "pycodestyle" %}
+{% set version = "2.12.1" %}
+{% set compress_type = "tar.gz" %}
+{% set sha256 = "6838eae08bbce4f6accd5d5572075c63626a15ee3e6f842df996bf62f6d73521" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
+  sha256: {{ sha256 }}
+
+build:
+  entry_points:
+    - pycodestyle = pycodestyle:_main
+  skip: True  # [py<38]
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
+
+requirements:
+  host:
+    - pip
+    - python
+    - setuptools
+    - wheel
+  run:
+    - python
+
+test:
+  imports:
+    - pycodestyle
+  requires:
+    - pip
+  commands:
+    # Unable to run pytest since the "testing" module is not distributed with the source.
+    - pip check
+    - pycodestyle --help
+    - pycodestyle --version
+
+about:
+  home: https://pycodestyle.pycqa.org
+  license: MIT
+  license_file: LICENSE
+  license_family: MIT
+  description: |
+    Pycodestyle is a tool to check your Python code against some of the style conventions in PEP 8.
+  summary: Python style guide checker
+  doc_url: https://pycodestyle.pycqa.org
+  dev_url: https://github.com/PyCQA/pycodestyle
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - pmlandwehr
+    - jjhelmus
+    - sigmavirus24
+    - dopplershift
+    - ocefpaf

@@ -1,0 +1,7 @@
+prefix=/root/autodl-tmp/conda/envs/fastApi
+includedir=${prefix}/include
+ 
+Name: XCMiscProto
+Description: XCMisc extension headers
+Version: 1.2.2
+Cflags: -I${includedir}
