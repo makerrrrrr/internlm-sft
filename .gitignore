@@ -78,4 +78,7 @@ conda/
 .conda/
 
 # App directories
-APP/ 
+APP/
+
+# Specific files
+main.py 
